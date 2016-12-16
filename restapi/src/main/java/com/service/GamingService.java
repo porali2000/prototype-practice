@@ -41,5 +41,5 @@ public interface GamingService {
      * Method to get all decks
      * @return
      */
-    List<Deck> getPersistedDecks();
+    List<String> getPersistedDecks();
 }

@@ -48,7 +48,7 @@ public class GamingController {
     @ResponseBody
     Object persistedDecks() {
         try {
-            List<Deck> persistedDecks = this.gamingService.getPersistedDecks();
+            List<String> persistedDecks = this.gamingService.getPersistedDecks();
             if(ObjectUtils.isEmpty(persistedDecks))
                 throw new RuntimeException("No Data Found");
             return persistedDecks;

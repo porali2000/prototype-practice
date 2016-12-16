@@ -29,7 +29,7 @@ public class AppBooter {
                 .groupName("shuffler")
                 .apiInfo(apiInfo())
                 .select()
-                .paths(regex("[^error]/.*"))
+                .paths(regex("/.*"))
                 .build();
     }
 

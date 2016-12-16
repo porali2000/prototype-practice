@@ -66,7 +66,7 @@ public class GamingServiceImpl implements GamingService{
     }
 
     @Override
-    public List<Deck> getPersistedDecks() {
-        return null;
+    public List<String> getPersistedDecks() {
+        return fetch.fetchAllDecks();
     }
 }

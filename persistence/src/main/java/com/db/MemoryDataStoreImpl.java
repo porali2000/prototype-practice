@@ -5,7 +5,9 @@ import com.models.Deck;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * Created by Porali_S on 12/15/2016.
@@ -38,6 +40,14 @@ public class MemoryDataStoreImpl implements DataStore {
     public synchronized Deck fetch(String deckName) {
         try {
             return STORED_DATAS.get(deckName);
+        } catch (Exception e) {
+            return null;
+        }
+    }
+
+    public synchronized List<String> fetchAll() {
+        try {
+            return STORED_DATAS.keySet().stream().collect(Collectors.toList());
         } catch (Exception e) {
             return null;
         }

@@ -4,6 +4,7 @@ import com.dto.Dto;
 import com.models.Deck;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -18,5 +19,7 @@ public interface DataStore {
 
     boolean delete(String deckName);
 
-     Deck fetch(String deckName);
+    Deck fetch(String deckName);
+
+    List<String> fetchAll();
 }
