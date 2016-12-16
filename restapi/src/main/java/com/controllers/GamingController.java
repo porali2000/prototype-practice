@@ -38,7 +38,7 @@ public class GamingController {
             if ( ObjectUtils.isEmpty(decks)) {
                 throw new RuntimeException("No Deck Available");
             }
-            return decks;
+            return decks.toString();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -64,7 +64,7 @@ public class GamingController {
             Deck namedDeck = this.gamingService.getNamedDeck(deckName);
             if (null == namedDeck)
                 throw new RuntimeException("Unable to find -" + deckName);
-            return namedDeck;
+            return namedDeck.toString();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }

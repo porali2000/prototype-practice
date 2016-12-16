@@ -7,10 +7,13 @@ import com.capability.Shuffle;
 import com.models.Deck;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.ObjectUtils;
 import org.springframework.util.StringUtils;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static org.hibernate.validator.internal.util.Contracts.assertNotNull;
 
 /**
  * Created by Porali_S on 12/15/2016.
@@ -61,7 +64,11 @@ public class GamingServiceImpl implements GamingService{
         if(StringUtils.isEmpty(deckName))
             return null;
         List<Deck> decks = new ArrayList<>();
-        decks.add(fetch.fetchDeckWithName(deckName));
+        Deck deck = fetch.fetchDeckWithName(deckName);
+        if(ObjectUtils.isEmpty(deck)){
+            throw new RuntimeException("Deck not found ");
+        }
+        decks.add(deck);
         return shuffle.shuffle(decks);
     }
 

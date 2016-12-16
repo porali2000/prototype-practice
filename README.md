@@ -13,10 +13,6 @@ Follow below steps to generate jar
   1. Navigate to ```<projectrootdir>/restapi```
   2. RUN ```gradle build```
 
-Valid profiles are
-  1. simple
-  2. complex
-
   
 ###To Run Jar
 Follow below steps to generate jar
@@ -31,3 +27,11 @@ Valid profiles are
 This service is swagger enabled
   1. Once service starts up
   2. Hit [swager-ui.html](http://loacalhost:8080/swager-ui.html)
+
+###Capability Included
+  1. Create new sorted deck with a name
+  2. Fetch the deck by name
+  3. Fetch all persisted decks
+  4. Delete a named deck
+  5. Shuffle with Simple logic
+  6. Shuffle with Complex logic
