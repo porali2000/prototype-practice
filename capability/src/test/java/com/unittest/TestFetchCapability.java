@@ -37,7 +37,7 @@ public class TestFetchCapability extends TestRunner {
             assertNotNull(fetch.fetchDeckWithName("TestingDeck"));
             assertNotNull(fetch.fetchDeckWithName("TestingDeck"));
         }catch (Exception e){
-            fail();
+            fail("Unexpected exception occurred with error message : " +  e.getMessage());
         }
     }
 

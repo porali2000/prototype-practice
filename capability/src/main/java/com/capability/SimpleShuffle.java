@@ -33,7 +33,7 @@ public class SimpleShuffle implements Shuffle  {
         for(Card card:cards){
             int randomIndex = new Random().nextInt(52);
             Card randomCard = cards.get(randomIndex);
-            Card tempCard = randomCard;
+            Card tempCard = randomCard.clone();
             randomCard.setRank(card.getRank());
             randomCard.setSuit(card.getSuit());
             card.setRank(tempCard.getRank());

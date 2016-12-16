@@ -10,6 +10,8 @@ import java.util.Map;
 /**
  * Created by Porali_S on 12/15/2016.
  */
+
+//This will leverage us to change to any other data store in feature
 @Component("memoryDataStore")
 public class MemoryDataStoreImpl implements DataStore {
 
@@ -24,9 +26,9 @@ public class MemoryDataStoreImpl implements DataStore {
         return true;
     }
 
-    public synchronized boolean delete(Dto dto) {
+    public synchronized boolean delete(String deckName) {
         try {
-            STORED_DATAS.remove(dto.getDeckName());
+            STORED_DATAS.remove(deckName);
         } catch (Exception e) {
             return false;
         }

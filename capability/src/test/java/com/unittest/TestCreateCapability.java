@@ -50,7 +50,7 @@ public class TestCreateCapability extends TestRunner {
             Deck testingDeck = fetch.fetchDeckWithName("TestingDeck");
             assertNotNull(testingDeck);
         }catch (Exception e){
-            fail();
+            fail("Unexpected exception occurred with error message : " +  e.getMessage());
         }
     }
 
@@ -66,7 +66,7 @@ public class TestCreateCapability extends TestRunner {
             assertNotNull(fetch.fetchDeckWithName("TestingDeck3"));
             assertNotNull(fetch.fetchDeckWithName("TestingDeck4"));
         }catch (Exception e){
-            fail();
+            fail("Unexpected exception occurred with error message : " +  e.getMessage());
         }
     }
 }

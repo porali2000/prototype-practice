@@ -21,4 +21,9 @@ public class Card {
     public String toString() {
         return rank.getRankName() + " - " + suit.name();
     }
+
+    @Override
+    public Card clone() {
+        return new Card(this.suit, this.rank);
+    }
 }

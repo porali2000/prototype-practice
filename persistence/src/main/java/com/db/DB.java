@@ -9,4 +9,5 @@ import com.models.Deck;
 public interface DB<T extends Dto> {
     boolean write(T dto);
     Deck fetch(String deckName);
+    boolean purge(String deckName);
 }

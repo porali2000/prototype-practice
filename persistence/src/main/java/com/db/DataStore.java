@@ -16,7 +16,7 @@ public interface DataStore {
 
     boolean merge(Dto dto);
 
-    boolean delete(Dto dto);
+    boolean delete(String deckName);
 
      Deck fetch(String deckName);
 }

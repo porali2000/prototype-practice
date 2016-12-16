@@ -14,13 +14,15 @@ import org.springframework.stereotype.Component;
  public class DBImpl<T extends Dto> implements DB<T>{
 
     @Autowired
-    @Qualifier("memoryDataStore")
+    @Qualifier("memoryDataStore") //Leverage us to choose the dependency
     DataStore dataStore;
 
     public boolean write(T dto){
        return dataStore.merge(dto);
     }
-
+    public boolean purge(String deckName){
+       return dataStore.delete(deckName);
+    }
     public Deck fetch(String deckName){
         return dataStore.fetch(deckName);
     }
