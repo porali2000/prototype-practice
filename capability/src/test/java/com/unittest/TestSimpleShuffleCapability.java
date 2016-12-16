@@ -5,18 +5,13 @@ import com.capability.Fetch;
 import com.capability.Shuffle;
 import com.capability.SimpleShuffle;
 import com.init.TestRunner;
-import com.models.Card;
 import com.models.Deck;
 import org.junit.Test;
-import org.mockito.internal.matchers.InstanceOf;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ActiveProfiles;
-import sun.security.jca.GetInstance;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 import static org.junit.Assert.*;
 

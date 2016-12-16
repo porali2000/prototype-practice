@@ -26,10 +26,10 @@ public class AppBooter {
     @Bean
     public Docket newsApi() {
         return new Docket(DocumentationType.SWAGGER_2)
-                .groupName("greetings")
+                .groupName("shuffler")
                 .apiInfo(apiInfo())
                 .select()
-                .paths(regex("/.*"))
+                .paths(regex("[^error]/.*"))
                 .build();
     }
 

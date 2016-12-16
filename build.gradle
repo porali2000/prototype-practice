@@ -13,9 +13,12 @@ buildscript {
 allprojects {
 
     apply plugin: 'java'
+    apply plugin: 'application'
     apply plugin: 'org.springframework.boot'
 
     sourceCompatibility = 1.8
+    mainClassName = 'com.init.AppBooter'
+
 
     project.ext {
         cucumberVersion = '1.2.5'
@@ -31,25 +34,18 @@ allprojects {
         compileOnly "org.projectlombok:lombok:1.16.12"
         testCompile 'junit:junit:' + junitVersion
         testCompile 'org.springframework.boot:spring-boot-starter-test'
-        testCompile 'info.cukes:cucumber-java:' + cucumberVersion
-        testCompile 'info.cukes:cucumber-junit:' + cucumberVersion
     }
 }
 
 jar {
     baseName = 'shuffler'
-//    version = $version
-}
-
-test {
-    testLogging.showStandardStreams = true
-    systemProperties System.getProperties()
+    version = '1.0-SNAPSHOT'
 }
 
 task wrapper(type: Wrapper) {
     gradleVersion = '3.2'
 }
 
-configurations {
-
+bootRepackage {
+    mainClass = 'com.init.AppBooter'
 }

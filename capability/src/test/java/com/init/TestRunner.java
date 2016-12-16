@@ -18,7 +18,7 @@ import static org.junit.Assert.assertNotNull;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = App.class)
-public class TestRunner {
+public abstract class TestRunner {
 
     protected void verifyDeck(List<Deck> shuffledDecks){
         assertNotNull(shuffledDecks);
