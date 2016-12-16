@@ -15,15 +15,28 @@ import java.util.Random;
 @Component
 @Profile("complex")
 public class ComplexShuffle implements Shuffle  {
+
+
+    /**
+     * This method stimulates the human hand shuffling nature
+     * It splits approx by middle and start recursively split until the hand reaches least capacity
+     * @param decks
+     * @return
+     */
     @Override
     public List<Deck> shuffle(List<Deck> decks) {
 
+        //For each deck we have
         decks.forEach(deck ->{
             List<Card> cards = deck.getCards();
             Random random = new Random();
-            int randomSplitPoint = random.nextInt(52); //selecting a random number tosplit the deck of cards
+
+            //Make the split
+            int randomSplitPoint = random.nextInt(52); //selecting a random number to split the deck of cards
             List<Card> secondHalf = cards.subList(randomSplitPoint, cards.size());
             List<Card> firstHalf = cards.subList(0, randomSplitPoint);
+
+            //Keep splitting the cards
             secondHalf = recursiveSplit(secondHalf);
             List<Card> tempCards = new ArrayList<>();
             tempCards.addAll(secondHalf);

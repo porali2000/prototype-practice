@@ -1,5 +1,5 @@
 # Shuffler
-Shuffler is an application to stimulate the Random shuffle and Hand shufflue of a deck.
+Shuffler is an application to stimulate the Random shuffle and Hand shuffle of a deck.
 
 ###Components
 Shuffler has modularised components which encourages de coupling and plug and play approach
@@ -10,13 +10,13 @@ Shuffler has modularised components which encourages de coupling and plug and pl
   
 ###To Build Jar
 Follow below steps to generate jar
-  1. Navigate to ```<projectrootdir>/restapi```
+  1. Navigate to ```<projectrootdir>\shuffler\restapi```
   2. RUN ```gradle build```
 
   
 ###To Run Jar
 Follow below steps to generate jar
-  1. Navigate to ```<projectrootdir>/restapi```
+  1. Navigate to ```<projectrootdir>\shuffler\restapi\build\libs```
   2. RUN ```java -Dspring.profiles.active=complex -jar restapi.jar```
 
 Valid profiles are
@@ -25,8 +25,7 @@ Valid profiles are
 
 ###Swagger
 This service is swagger enabled
-  1. Once service starts up
-  2. Hit [swager-ui.html](http://loacalhost:8080/swager-ui.html)
+  1. Once service starts up hit [swager-ui.html](http://loacalhost:8080/swager-ui.html)
 
 ###Capability Included
   1. Create new sorted deck with a name
