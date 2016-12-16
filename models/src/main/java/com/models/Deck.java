@@ -15,12 +15,12 @@ import java.util.List;
 public class Deck {
 
     static Deck sortedDeck;
-    public List<PIP> cards;
+    public List<Card> cards;
 
     private Deck(){
     }
 
-    public Deck(List<PIP> cards){
+    public Deck(List<Card> cards){
         this.cards = cards;
     }
 
@@ -29,14 +29,19 @@ public class Deck {
             return sortedDeck;
         }
 
-        List<PIP> pips = new ArrayList<>();
+        List<Card> pips = new ArrayList<>();
 
         Arrays.stream(Suit.values()).forEach(suit -> {
             Arrays.stream(Rank.values()).forEach(rank -> {
-                pips.add(new PIP(suit, rank));
+                pips.add(new Card(suit, rank));
             });
         });
         sortedDeck = new Deck(pips);
         return sortedDeck;
+    }
+
+    @Override
+    public String toString() {
+        return cards.toString();
     }
 }

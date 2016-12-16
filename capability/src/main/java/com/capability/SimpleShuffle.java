@@ -1,11 +1,10 @@
 package com.capability;
 
 import com.models.Deck;
-import com.models.PIP;
+import com.models.Card;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
-import javax.smartcardio.Card;
 import java.util.List;
 import java.util.Random;
 import java.util.stream.Collectors;
@@ -17,20 +16,28 @@ import java.util.stream.Collectors;
 @Profile("simple")
 public class SimpleShuffle implements Shuffle  {
 
-    Random random = new Random();
+
 
     @Override
     public List<Deck> shuffle(List<Deck> decks) {
 
         decks.parallelStream()
                 .map(deck -> deck.getCards())
-                .collect(Collectors.toList()).forEach(deck -> {
-                swap(deck);
+                .collect(Collectors.toList()).forEach(cards -> {
+                swap(cards);
         });
-        return collect;
+        return decks;
     }
 
-    private void swap(List<PIP> deck) {
-
+    private void swap(List<Card> cards) {
+        for(Card card:cards){
+            int randomIndex = new Random().nextInt(52);
+            Card randomCard = cards.get(randomIndex);
+            Card tempCard = randomCard;
+            randomCard.setRank(card.getRank());
+            randomCard.setSuit(card.getSuit());
+            card.setRank(tempCard.getRank());
+            card.setSuit(tempCard.getSuit());
+        }
     }
 }

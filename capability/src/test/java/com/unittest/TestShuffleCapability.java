@@ -49,9 +49,12 @@ public class TestShuffleCapability extends TestRunner {
         try {
             List decks = new ArrayList();
             decks.add(create.createStandardDeckWithName("SimpleShuffleDeck"));
+            System.out.println(decks);
             assertNotNull(fetch.fetchDeckWithName("SimpleShuffleDeck"));
             List shuffledDeck = this.shuffle.shuffle(decks);
             assertNotNull(shuffledDeck);
+            System.out.println("*******************");
+            System.out.println(shuffledDeck);
         }catch (Exception e){
             fail();
         }

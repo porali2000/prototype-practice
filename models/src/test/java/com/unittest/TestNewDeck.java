@@ -2,7 +2,7 @@ package com.unittest;
 
 import com.init.TestRunner;
 import com.models.Deck;
-import com.models.PIP;
+import com.models.Card;
 import com.models.Rank;
 import com.models.Suit;
 import org.junit.Test;
@@ -31,7 +31,7 @@ public class TestNewDeck extends TestRunner {
         assertNotNull(newDeck);
 
         //Verify all spades are sorted
-        List<PIP> spadePips = newDeck.getCards().stream().filter(card -> card.getSuit().equals(Suit.Spade)).collect(Collectors.toList());
+        List<Card> spadePips = newDeck.getCards().stream().filter(card -> card.getSuit().equals(Suit.Spade)).collect(Collectors.toList());
         assertNotNull(spadePips);
         List<Rank> ranks = Arrays.asList(Rank.values());
         for (int i = 0; i < spadePips.size(); i++) {
@@ -39,21 +39,21 @@ public class TestNewDeck extends TestRunner {
         }
 
         //Verify all hearts are sorted
-        List<PIP> heartPips = newDeck.getCards().stream().filter(card -> card.getSuit().equals(Suit.Hearts)).collect(Collectors.toList());
+        List<Card> heartPips = newDeck.getCards().stream().filter(card -> card.getSuit().equals(Suit.Hearts)).collect(Collectors.toList());
         assertNotNull(heartPips);
         for (int i = 0; i < heartPips.size(); i++) {
             assertTrue(ranks.get(i).equals(heartPips.get(i).getRank()));
         }
 
         //Verify all Diamonds are sorted
-        List<PIP> diamondPips = newDeck.getCards().stream().filter(card -> card.getSuit().equals(Suit.Diamond)).collect(Collectors.toList());
+        List<Card> diamondPips = newDeck.getCards().stream().filter(card -> card.getSuit().equals(Suit.Diamond)).collect(Collectors.toList());
         assertNotNull(diamondPips);
         for (int i = 0; i < diamondPips.size(); i++) {
             assertTrue(ranks.get(i).equals(diamondPips.get(i).getRank()));
         }
 
         //Verify all Clubs are sorted
-        List<PIP> clubPips = newDeck.getCards().stream().filter(card -> card.getSuit().equals(Suit.Club)).collect(Collectors.toList());
+        List<Card> clubPips = newDeck.getCards().stream().filter(card -> card.getSuit().equals(Suit.Club)).collect(Collectors.toList());
         assertNotNull(clubPips);
         for (int i = 0; i < clubPips.size(); i++) {
             assertTrue(ranks.get(i).equals(clubPips.get(i).getRank()));
